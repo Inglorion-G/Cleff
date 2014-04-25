@@ -1,7 +1,7 @@
-<% action_url = (action == :new) ? band_albums_url : album(@album)  %>
-<% method = (action == :new) ? "post" : "patch" %>
+<% action = (album.persisted? ? album_url(album) : band_albums_url)  %>
+<% method = (album.persisted? ? :put : :post) %>
 
-<form action="<%= action_url %>" method="<%= method %>">
+<form action="<%= action %>" method="<%= method %>">
 	<input 
 	  type="hidden"
 		name="authenticity_token"
