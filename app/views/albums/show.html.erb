@@ -1,3 +1,11 @@
 <h1><%= @album.name %></h1>
-<h4>By: <%= @album.band.name %></h4>
+<h4>By: <%= link_to "#{@album.band.name}", band_url(@album.band) %></h4>
+<% @album.tracks.each do |track| %>
+  <h4><%= link_to "#{track.name}", track_url(track) %></h4>
+<% end %>
+
 <h4>Recording: <%= @album.recording_type %></h4>
+<br>
+<%= link_to "Tracks on #{@album.name}", album_tracks_url(@album) %>
+<br>
+<%= button_to "Delete Album", band_album_url(@album.band, @album), method: :delete  %>

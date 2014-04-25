@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<div align="right">
+  <h4><%= (current_user.nil? ? "Nobody" : current_user.email) %> is logged in.</h4>
+	<% if current_user.nil? %>
+	  <%= link_to "Sign In", new_session_url %> or
+		<%= link_to "Sign Up", new_user_url %>
+	<% else %>
+		<%= button_to "Logout", session_url, method: :delete %>
+	<% end %>
+</div>
+
 <%= yield %>
 
 </body>

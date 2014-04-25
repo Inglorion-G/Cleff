@@ -1,3 +1,6 @@
 <h1><%= @track.name %></h1>
-<h4>Album: <%= @track.album.name %></h4>
+<h4>Album: <%= link_to "#{@track.album.name}", album_url(@track.album) %></h4>
+<h4>Artist: <%= link_to "#{@track.album.band.name}", 
+							 band_url(@track.album.band) %></h4>
 <h4>Sample Lyrics: <%= @track.lyrics %></h4>
+<%= button_to "Delete Track", album_track_url(@track.album, @track), method: :delete  %>

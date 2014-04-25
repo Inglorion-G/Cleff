@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       return
     else
       log_in_user!(user)
-      redirect_to user_url(user)
+      redirect_to root_url
     end
   end
   

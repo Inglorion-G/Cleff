@@ -1,7 +1,8 @@
 class TracksController < ApplicationController
   
   def index
-    @tracks = Track.all
+    @album = Album.find(params[:album_id])
+    @tracks = @album.tracks
     render :index
   end
   
@@ -43,7 +44,7 @@ class TracksController < ApplicationController
   def destroy
     @track = Track.find(params[:id])
     @track.destroy
-    render track_url(@track)
+    redirect_to album_tracks_url
   end
   
   private

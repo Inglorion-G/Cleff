@@ -1,7 +1,8 @@
 class AlbumsController < ApplicationController
   
   def index
-    @albums = Album.all
+    @band = Band.find(params[:band_id])
+    @albums = @band.albums
     render :index
   end
   
@@ -42,7 +43,7 @@ class AlbumsController < ApplicationController
   def destroy
     @album = Album.find(params[:id])
     @album.destroy
-    render album_url(@album)
+    redirect_to band_albums_url
   end
   
   private
