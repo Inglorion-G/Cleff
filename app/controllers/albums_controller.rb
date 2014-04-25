@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
   
   def index
     @albums = Album.all
-    render json: Album.all
+    render :index
   end
   
   def show

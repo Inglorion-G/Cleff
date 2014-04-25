@@ -1,1 +1,2 @@
-<h1><%= @band.name %></h1>
+<h1><%= @band.name.capitalize %></h1>
+<%= link_to "Albums by #{@band.name.capitalize}", band_albums_url(@band) %>

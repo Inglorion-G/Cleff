@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   end
   
   resources :tracks, only: [:edit, :update, :show]
+  
+  root to: "bands#index"
  
 end
