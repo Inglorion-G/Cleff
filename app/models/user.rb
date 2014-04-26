@@ -13,7 +13,7 @@
 class User < ActiveRecord::Base
   
   before_validation :ensure_session_token
-  validates :email, :password_digest, :session_token, presence: true
+  validates :email, :password_digest, :session_token, :activated, presence: true
   validates :email, :session_token, uniqueness: true
   
   has_many :notes
