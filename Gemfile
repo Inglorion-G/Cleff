@@ -33,6 +33,8 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem "letter_opener", :group => :development
+
 gem 'annotate'
 
 # Use ActiveModel has_secure_password
