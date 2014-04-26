@@ -8,4 +8,5 @@
 <br>
 <%= link_to "Tracks on #{@album.name}", album_tracks_url(@album) %>
 <br>
+<br>
 <%= button_to "Delete Album", band_album_url(@album.band, @album), method: :delete  %>

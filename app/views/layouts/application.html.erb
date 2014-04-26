@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div align="right">
+<div align="right" width=75>
   <h4><%= (current_user.nil? ? "Nobody" : current_user.email) %> is logged in.</h4>
 	<% if current_user.nil? %>
 	  <%= link_to "Sign In", new_session_url %> or

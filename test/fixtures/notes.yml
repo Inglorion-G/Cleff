@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: notes
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)      not null
+#  body       :text             not null
+#  user_id    :integer          not null
+#  track_id   :integer          not null
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined.  If you add columns to the

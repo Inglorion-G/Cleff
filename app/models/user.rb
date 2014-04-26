@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   validates :email, :password_digest, :session_token, presence: true
   validates :email, :session_token, uniqueness: true
   
+  has_many :notes
+  
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)
     user.try(:is_password?, password) ? user : nil

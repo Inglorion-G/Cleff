@@ -1,3 +1,5 @@
 <h1><%= @band.name.capitalize %></h1>
 <%= link_to "Albums by #{@band.name.capitalize}", band_albums_url(@band) %>
+<br>
+<br>
 <%= button_to "Delete Band", band_url(@band), method: :delete %>

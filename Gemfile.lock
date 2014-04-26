@@ -124,6 +124,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer (~> 4.1.0)
   annotate
   bcrypt
   better_errors

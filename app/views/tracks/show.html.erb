@@ -4,3 +4,12 @@
 							 band_url(@track.album.band) %></h4>
 <h4>Sample Lyrics: <%= @track.lyrics %></h4>
 <%= button_to "Delete Track", album_track_url(@track.album, @track), method: :delete  %>
+
+<br>
+<br>
+
+<%= link_to "Add a New Note", new_track_note_url(@track) %>
+
+<% @track.notes.each do |note| %>
+  <%= render 'notes/note', track: @track, note: note %>
+<% end %>
